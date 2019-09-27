@@ -18,6 +18,7 @@ public class MainTests {
     
     @Test
     void testMonkey() {
+        
         assertEquals("monkey", Math.random() > .5 ? "banana" : "monkey");
     }
 
