@@ -9,7 +9,7 @@ stages:
 
 job 1 :
   stage : build
-  script : mvn -Dskip.test=true package
+  script : mvn -DskipTests package
   cache:
     key: ${CI_COMMIT_REF_SLUG-m2}
     paths:
