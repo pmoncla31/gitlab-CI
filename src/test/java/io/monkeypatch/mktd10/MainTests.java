@@ -15,4 +15,10 @@ public class MainTests {
     void testBar() {
         assertEquals("bar", "bar");
     }
+    
+    @Test
+    void testMonkey() {
+        assertEquals("monkey", Math.random() > .5 ? "banana" : "monkey");
+    }
+
 }
