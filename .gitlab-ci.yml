@@ -18,8 +18,8 @@ job 1 :
   artifacts:
     name: "bob2"
     paths:
-      - target/my-spark-app-1.0-SNAPSHOT.jar
-
+      - target/*
+      
 job 2 :
   stage : test
   script: mvn verify
