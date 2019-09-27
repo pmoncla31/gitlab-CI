@@ -1,22 +1,24 @@
 image: "maven" 
 
 
-cache:
-  key: m2
-  paths:
-  - ~/.m2/repository
 
+stages:
+  - build
+  - test
 
-build:
-  script:
-    - mvn -Dskip.test=true package
-    
+job 1 :
+  stage : build
+  script : mvn -Dskip.test=true package
+  cache:
+    key: ${CI_COMMIT_REF_SLUG-m2}
+    paths:
+    - ${HOME}/.m2/repository
+
   artifacts:
     name: "bob2"
     paths:
       - target/my-spark-app-1.0-SNAPSHOT.jar
 
-
-test:
-  script:
-    - mvn verify
+job 2 :
+  stage : test
+  script: mvn verify
