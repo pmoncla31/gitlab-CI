@@ -1,0 +1,22 @@
+image: "node:8.16.1-jessie" 
+
+
+cache:
+  key: m2
+  paths:
+  - ~/.m2/repository
+
+
+build:
+  script:
+    - mvn -Dskip.test=true package
+    
+  artifacts:
+    name: "bob2"
+    paths:
+      - target/my-spark-app-1.0-SNAPSHOT.jar
+
+
+test:
+  script:
+    - mvn verify
