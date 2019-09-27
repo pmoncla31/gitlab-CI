@@ -26,6 +26,8 @@ job 2 :
 
 job 3 :
   stage : deploy
-  script: echo "mais miaou"
+  script: mvn site
 
+
+  
 
