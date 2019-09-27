@@ -19,7 +19,7 @@ public class MainTests {
     @Test
     void testMonkey() {
 
-        assertEquals("monkey", Math.random() > .5 ? "banana" : "monkey");
+        assertEquals("monkey", Math.random() > .9 ? "banana" : "monkey");
     }
     @Test
     void testMonkey2() {
