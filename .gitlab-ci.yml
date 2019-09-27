@@ -25,9 +25,13 @@ job 2 :
   script: mvn verify
 
 job 3 :
-  stage : deploy
-  script: mvn site
-
-
-  
-
+  stage: deploy
+  script:
+    - mkdir public
+    - cp -r * target/site/* public
+    
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
